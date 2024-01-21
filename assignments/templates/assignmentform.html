@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <title>Assignments</title>
+    <link href="static/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="container">
+	<div class="row">
+			<h1>Submit Assignment </h1>
+	</div>
+	<div class="row input-container">
+		<form action="/assignmentsubmit" method="post"  enctype="multipart/form-data">
+		{%csrf_token%}
+			<div class="col-xs-12">
+				<div class="styled-input wide">
+					<input type="text" name="username" required />
+					<label>Name</label>
+				</div>
+			</div>
+			<div class="col-12 col-sm-12">
+				<div class="styled-input wide">
+					<input type="email" name="email" required />
+					<label>Email</label>
+				</div>
+			</div>
+			<div class="col-12 col-sm-12">
+				<div class="styled-input wide">
+					<input type="file" name="zipfile" accept="*/*" multiple required />
+				</div>
+			</div>
+			<div class="col-xs-12">
+				<div class="styled-input wide">
+					<textarea name="message" required></textarea>
+					<label>Message</label>
+				</div>
+			</div>
+			<div class="col-xs-12">
+				<input type="submit" value="Submit">
+			</div>
+		</form>
+	</div>
+</div>
+</body>
+</html>
